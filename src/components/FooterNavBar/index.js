@@ -1,6 +1,6 @@
 function FooterNavBar({ setFilter, filter }) {
   return (
-    <nav className="flex gap-2  ">
+    <nav className="flex flex-col gap-2 sm:flex-row">
       <button
         onClick={() => setFilter("ALL")}
         className={`${
