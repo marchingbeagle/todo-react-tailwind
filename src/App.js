@@ -2,7 +2,7 @@ import Todo from "./components/todo";
 
 function App() {
   return (
-    <div className="App">
+    <div className=" h-screen flex items-center justify-center">
       <Todo />
     </div>
   );

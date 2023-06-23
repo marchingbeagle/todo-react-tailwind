@@ -7,6 +7,7 @@ function Todo() {
   const [item, setItem] = useState("");
   const [itemList, setItemList] = useState([]);
   const [itensLeft, setItensLeft] = useState([]);
+  const [filter, setFilter] = useState("ALL");
 
   const clearInput = () => {
     setItem("");
@@ -31,16 +32,25 @@ function Todo() {
   }, [itemList]);
 
   return (
-    <section className="flex m-auto w-9/10 flex-col w-3xl max-w-3xl shadow">
+    <section className="flex-1 flex m-auto w-9/10 flex-col w-3xl max-w-3xl shadow">
       <div className="p-4">
         <h1 className="text-center text-3xl p-4">THINGS TO DO</h1>
         <ItemInput
           setValue={(item) => setItem(item.target.value)}
           value={item}
         />
-        <ItemList itemList={itemList} setItemList={setItemList} />
+        <ItemList
+          filter={filter}
+          itemList={itemList}
+          setItemList={setItemList}
+        />
       </div>
-      <Footer addToList={addToList} itensLeft={itensLeft.length} />
+      <Footer
+        filter={filter}
+        setFilter={setFilter}
+        addToList={addToList}
+        itensLeft={itensLeft.length}
+      />
     </section>
   );
 }
