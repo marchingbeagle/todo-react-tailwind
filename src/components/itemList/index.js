@@ -1,3 +1,5 @@
+import ItemListLi from "../ItemListLi";
+
 function ItemList({ itemList, setItemList, filter }) {
   function handleChecked(id) {
     const refreshList = itemList.map((item) => {
@@ -8,42 +10,16 @@ function ItemList({ itemList, setItemList, filter }) {
 
   return (
     <ul className=" pt-4 ">
-      {itemList.map((event) => {
+      {itemList.map((element) => {
         if (filter === "ALL") {
-          return (
-            <li key={event.item}>
-              <input
-                className="mr-4"
-                type="checkbox"
-                onChange={() => handleChecked(event.id)}
-                checked={event.checked || false}
-              />
-              {event.item}
-            </li>
-          );
+          return <ItemListLi handleChecked={handleChecked} element={element} />;
         }
         return filter === "ACTIVE" ? (
-          !event.checked || event.checked === null ? (
-            <li key={event.item}>
-              <input
-                className="mr-4"
-                type="checkbox"
-                onChange={() => handleChecked(event.id)}
-                checked={event.checked || false}
-              />
-              {event.item}
-            </li>
+          !element.checked || element.checked === null ? (
+            <ItemListLi handleChecked={handleChecked} element={element} />
           ) : null
-        ) : event.checked ? (
-          <li key={event.item}>
-            <input
-              className="mr-4"
-              type="checkbox"
-              onChange={() => handleChecked(event.id)}
-              checked={event.checked}
-            />
-            {event.item}
-          </li>
+        ) : element.checked ? (
+          <ItemListLi handleChecked={handleChecked} element={element} />
         ) : null;
       })}
     </ul>
