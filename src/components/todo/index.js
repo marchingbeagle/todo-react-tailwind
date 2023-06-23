@@ -14,13 +14,17 @@ function Todo() {
   };
 
   const addToList = () => {
-    const newList = [
-      ...itemList,
-      {
-        item,
-        id: itemList.forEach((_, index) => (itemList[index].id = index)),
-      },
-    ];
+    if (item === "") {
+      return null;
+    }
+
+    const newItem = {
+      item,
+      id: itemList.length,
+    };
+
+    const newList = [...itemList, newItem];
+
     setItemList(newList);
     clearInput();
   };
