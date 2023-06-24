@@ -36,9 +36,11 @@ function Todo() {
   }, [itemList]);
 
   return (
-    <section className="flex-1 flex m-auto w-9/10 flex-col w-3xl max-w-3xl shadow">
+    <section className="flex-1 flex m-auto w-9/10 flex-col w-3xl max-w-3xl sm:shadow">
       <div className="p-4">
-        <h1 className="text-center text-3xl p-4">THINGS TO DO</h1>
+        <h1 className="text-center text-3xl p-4 tracking-tighter">
+          THINGS TO DO
+        </h1>
         <ItemInput
           setValue={(item) => setItem(item.target.value)}
           value={item}
