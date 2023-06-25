@@ -11,16 +11,36 @@ function ItemList({ itemList, setItemList, filter }) {
   return (
     <ul className=" pt-4 ">
       {itemList.map((element) => {
-        if (filter === "ALL") {
-          return <ItemListLi handleChecked={handleChecked} element={element} />;
+        switch (filter) {
+          case "ACTIVE":
+            return (
+              (!element.checked || element.checked === null) && (
+                <ItemListLi
+                  key={element.id}
+                  handleChecked={handleChecked}
+                  element={element}
+                />
+              )
+            );
+          case "COMPLETED":
+            return (
+              element.checked && (
+                <ItemListLi
+                  key={element.id}
+                  handleChecked={handleChecked}
+                  element={element}
+                />
+              )
+            );
+          default:
+            return (
+              <ItemListLi
+                key={element.id}
+                handleChecked={handleChecked}
+                element={element}
+              />
+            );
         }
-        return filter === "ACTIVE" ? (
-          !element.checked || element.checked === null ? (
-            <ItemListLi handleChecked={handleChecked} element={element} />
-          ) : null
-        ) : element.checked ? (
-          <ItemListLi handleChecked={handleChecked} element={element} />
-        ) : null;
       })}
     </ul>
   );

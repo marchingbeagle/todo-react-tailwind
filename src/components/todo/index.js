@@ -1,7 +1,8 @@
 import ItemInput from "../itemInput";
-import { useEffect, useState } from "react";
 import ItemList from "../itemList";
 import Footer from "../Footer";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function Todo() {
   const [item, setItem] = useState("");
@@ -9,24 +10,17 @@ function Todo() {
   const [itensLeft, setItensLeft] = useState([]);
   const [filter, setFilter] = useState("ALL");
 
-  const clearInput = () => {
-    setItem("");
-  };
-
   const addToList = () => {
-    if (item === "") {
-      return null;
-    }
+    item != "" &&
+      setItemList([
+        ...itemList,
+        {
+          item,
+          id: uuidv4(),
+        },
+      ]);
 
-    const newItem = {
-      item,
-      id: itemList.length,
-    };
-
-    const newList = [...itemList, newItem];
-
-    setItemList(newList);
-    clearInput();
+    setItem("");
   };
 
   useEffect(() => {

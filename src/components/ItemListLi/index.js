@@ -1,6 +1,6 @@
 function ItemListLi({ element, handleChecked }) {
   return (
-    <li key={element.id} className="flex items-center p-2">
+    <li className="flex items-center p-2">
       <input
         className="mr-4 w-7 h-7"
         type="checkbox"
