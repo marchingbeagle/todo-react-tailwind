@@ -25,7 +25,7 @@ function Todo() {
 
   useEffect(() => {
     const itensLeft = itemList.filter((item) => !item.checked);
-    document.title = itensLeft.length;
+    document.title = `${itensLeft.length} left`;
     setItensLeft(itensLeft);
   }, [itemList]);
 
