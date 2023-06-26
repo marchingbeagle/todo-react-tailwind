@@ -1,6 +1,6 @@
 import ItemListLi from "../ItemListLi";
 
-function ItemList({ itemList, setItemList, filter }) {
+export default function ItemList({ itemList, setItemList, filter }) {
   function refreshList(id) {
     setItemList(
       itemList.map((item) => {
@@ -46,5 +46,3 @@ function ItemList({ itemList, setItemList, filter }) {
     </ul>
   );
 }
-
-export default ItemList;
