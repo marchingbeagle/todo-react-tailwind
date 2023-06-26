@@ -30,9 +30,9 @@ function Todo() {
   }, [itemList]);
 
   return (
-    <section className="flex-1 flex m-auto w-9/10 flex-col w-3xl max-w-3xl sm:shadow text-gray-600 ">
+    <section className="w-9/10 w-3xl m-auto flex max-w-3xl flex-1 flex-col text-gray-600 sm:shadow ">
       <div className="p-4">
-        <h1 className="text-center text-3xl p-4 tracking-tighter">
+        <h1 className="p-4 text-center text-3xl tracking-tighter">
           THINGS TO DO
         </h1>
         <ItemInput

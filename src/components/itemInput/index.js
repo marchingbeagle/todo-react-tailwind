@@ -5,7 +5,7 @@ function ItemInput({ name, value, setValue }) {
       type="text"
       name={name}
       value={value}
-      className="ItemInput w-full p-4 box-border border-2 rounded-lg hover:border-blue-200 transition-all"
+      className="ItemInput box-border w-full rounded-lg border-2 p-4 transition-all hover:border-blue-200"
     />
   );
 }

@@ -7,7 +7,7 @@ function ItemListLi({ element, refreshList }) {
     <li className="flex items-center py-2">
       <FontAwesomeIcon
         onClick={() => refreshList(element.id)}
-        className={`hover:translate-x-1 transition-all mr-4 ${
+        className={`mr-4 transition-all hover:translate-x-1 ${
           element.checked ? "text-blue-300" : "text-gray-300"
         }`}
         icon={element.checked ? faSquareCheck : faSquare}

@@ -4,10 +4,10 @@ function NavBarButton({ setFilter, filter, children }) {
       onClick={setFilter}
       className={`${
         filter.toUpperCase() == children.toUpperCase()
-          ? "bg-blue-400 flex-1 text-white font-bold"
+          ? "flex-1 bg-blue-400 font-bold text-white"
           : ""
       } 
-         shadow p-4 sm:px-10 uppercase text-sm  rounded-md leading-3 hover:bg-blue-200 hover:translate-y-1 transition-all`}
+         rounded-md p-4 text-sm uppercase leading-3  shadow transition-all hover:translate-y-1 hover:bg-blue-200 sm:px-10`}
     >
       {children}
     </button>
