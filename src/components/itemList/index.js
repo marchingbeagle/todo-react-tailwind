@@ -1,11 +1,12 @@
 import ItemListLi from "../ItemListLi";
 
 function ItemList({ itemList, setItemList, filter }) {
-  function handleChecked(id) {
-    const refreshList = itemList.map((item) => {
-      return item.id === id ? { ...item, checked: !item.checked } : item;
-    });
-    setItemList(refreshList);
+  function refreshList(id) {
+    setItemList(
+      itemList.map((item) => {
+        return item.id === id ? { ...item, checked: !item.checked } : item;
+      })
+    );
   }
 
   return (
@@ -17,7 +18,7 @@ function ItemList({ itemList, setItemList, filter }) {
               (!element.checked || element.checked === null) && (
                 <ItemListLi
                   key={element.id}
-                  handleChecked={handleChecked}
+                  refreshList={refreshList}
                   element={element}
                 />
               )
@@ -27,7 +28,7 @@ function ItemList({ itemList, setItemList, filter }) {
               element.checked && (
                 <ItemListLi
                   key={element.id}
-                  handleChecked={handleChecked}
+                  refreshList={refreshList}
                   element={element}
                 />
               )
@@ -36,7 +37,7 @@ function ItemList({ itemList, setItemList, filter }) {
             return (
               <ItemListLi
                 key={element.id}
-                handleChecked={handleChecked}
+                refreshList={refreshList}
                 element={element}
               />
             );
