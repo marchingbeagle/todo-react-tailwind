@@ -7,7 +7,7 @@ function NavBarButton({ setFilter, filter, children }) {
           ? "bg-blue-400 flex-1 text-white font-bold"
           : ""
       } 
-         shadow p-4 sm:px-10 uppercase text-sm  rounded-md leading-3 hover:bg-blue-200`}
+         shadow p-4 sm:px-10 uppercase text-sm  rounded-md leading-3 hover:bg-blue-200 hover:translate-y-1 transition-all`}
     >
       {children}
     </button>
